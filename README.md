@@ -1,111 +1,64 @@
-News Service
+# News Service
 
-A simple news application built with React and Node.js. Users can browse news posts, read full articles, create new posts, edit existing ones, and delete posts.
+A simple full-stack news application where users can view, create, edit, and delete news posts.
 
-Features
+## Features
 
-View a list of news posts
+- View all news posts
+- Read full news articles
+- Create new posts
+- Edit existing posts
+- Delete posts
+- Store news in a JSON file
 
-Read full news articles
+## Tech Stack
 
-Create new posts
+- **Frontend:** React, TypeScript, Vite, CSS
+- **Backend:** Node.js, Express, TypeScript
+- **Database:** Custom file-based database using JSON
 
-Edit existing posts
+## Getting Started
 
-Delete posts
+### Install Dependencies
 
-Store news data in a JSON file
+Install dependencies in both `clientService` and `serverService` directories:
 
-Tech Stack
+```bash
+npm install
+```
 
-Frontend:
+### Build the Frontend
 
-React
-
-TypeScript
-
-Vite
-
-CSS
-
-Backend:
-
-Node.js
-
-Express
-
-TypeScript
-
-Storage:
-
-Custom file-based database using JSON
-
-Getting Started
-
-1. Install dependencies
-
-Install the dependencies in both the clientService and serverService directories.
-
-2. Build the frontend
-
+```bash
 cd clientService
-npm install
 npm run build
+```
 
-3. Start the backend
+### Start the Backend
 
+```bash
 cd serverService
-npm install
 npm run dev
+```
 
-Make sure the server environment variables HOST and PORT are configured.
+Make sure the `HOST` and `PORT` environment variables are configured.
 
-4. Open the application
+Open the application at the address configured for your backend server.
 
-Open the address configured for your backend server in your browser.
+## API Endpoints
 
-API Endpoints
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/newsposts/` | Get all news posts |
+| GET | `/api/newsposts/:id` | Get a news post by ID |
+| POST | `/api/newsposts/` | Create a news post |
+| PUT | `/api/newsposts/:id` | Update a news post |
+| DELETE | `/api/newsposts/:id` | Delete a news post |
 
-Method
+## Data Storage
 
-Endpoint
+News posts are stored in a local JSON file using a custom file-based database.
 
-Description
+## Purpose
 
-GET
-
-/api/newsposts/
-
-Get all news posts
-
-GET
-
-/api/newsposts/:id
-
-Get a news post by ID
-
-POST
-
-/api/newsposts/
-
-Create a news post
-
-PUT
-
-/api/newsposts/:id
-
-Update a news post
-
-DELETE
-
-/api/newsposts/:id
-
-Delete a news post
-
-Data Storage
-
-News posts are stored in a local JSON file. This project uses a custom file-based database instead of a traditional database system.
-
-Purpose
-
-This project was created as a learning assignment to practise building a full-stack web application with React, TypeScript, Express, REST API endpoints, and file-based data storage.
+This project was created as a learning assignment to practise full-stack development, REST APIs, React, TypeScript, and Express.
