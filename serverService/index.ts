@@ -36,8 +36,8 @@ app.get("/api/newsposts/", (req: Request, res: Response) => {
   try {
     res.json(newsTablePosts.getAll());
   } catch (err) {
-    res.status(404).json({
-      message: "Posts are not found.",
+    res.status(500).json({
+      message: "Failed to get news posts.",
     });
   }
 });
@@ -85,10 +85,17 @@ app.put("/api/newsposts/:id", (req: Request, res: Response) => {
     }
 
     const updatedPost = newsTablePosts.update(id, updates);
+
+    if (!updatedPost) {
+      return res.status(404).json({
+        message: "News post not found.",
+      });
+    }
+
     return res.status(200).json(updatedPost);
   } catch (err) {
     res.status(500).json({
-      message: "Failed to get post.",
+      message: "Failed to update post.",
     });
   }
 });
@@ -108,7 +115,7 @@ app.delete("/api/newsposts/:id", (req: Request, res: Response) => {
     return res.status(200).json(post);
   } catch (err) {
     res.status(500).json({
-      message: "Failed to get post.",
+      message: "Failed to delete post.",
     });
   }
 });

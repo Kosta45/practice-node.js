@@ -27,18 +27,13 @@ class NewsPostTable {
   }
 
   getAll(): NewPost[] {
-    try {
-      const data = fs.readFileSync(this.file, "utf-8");
-      const posts = JSON.parse(data) as NewPost[];
+    const data = fs.readFileSync(this.file, "utf-8");
+    const posts = JSON.parse(data) as NewPost[];
 
-      return posts.map((post) => ({
-        ...post,
-        createDate: new Date(String(post.createDate)),
-      }));
-    } catch (err) {
-      console.log(err);
-      return [];
-    }
+    return posts.map((post) => ({
+      ...post,
+      createDate: new Date(String(post.createDate)),
+    }));
   }
 
   getById(id: number): NewPost | undefined {
