@@ -3,7 +3,6 @@ import express, { Request, Response } from "express";
 import fileDB from "../fileDB/fileDB.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import fs from "node:fs";
 
 const app = express();
 app.use(express.json());
