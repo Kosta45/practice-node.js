@@ -1,12 +1,22 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import fileDB from "../fileDB/fileDB.js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 
 const app = express();
 app.use(express.json());
 
 const host = process.env.HOST;
 const port = Number(process.env.PORT);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const clientPath = path.resolve(__dirname, "../clientService/dist");
+
+app.use(express.static(clientPath));
 
 const newsPostSchema = {
   id: Number,
@@ -19,7 +29,7 @@ fileDB.registerSchema("newspost", newsPostSchema);
 const newsTablePosts = fileDB.getTable("newspost");
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.sendFile(path.join(clientPath, "index.html"));
 });
 
 app.get("/api/newsposts/", (req: Request, res: Response) => {
