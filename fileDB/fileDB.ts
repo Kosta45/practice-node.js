@@ -1,4 +1,6 @@
 import fs from "fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type {
   NewPost,
   CreateNewPost,
@@ -8,6 +10,8 @@ import type {
 type Schema = Record<string, unknown>;
 
 const schemas: Record<string, Schema> = {};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function registerSchema(name: string, schema: Schema): void {
   schemas[name] = schema;
@@ -18,7 +22,7 @@ class NewsPostTable {
   private schema: Schema;
 
   constructor(name: string, schema: Schema) {
-    this.file = `./data/${name}.json`;
+    this.file = path.join(__dirname, "data", `${name}.json`);
     this.schema = schema;
   }
 

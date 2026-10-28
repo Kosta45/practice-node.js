@@ -1,0 +1,14 @@
+.main-wrapper {
+  text-align: left;
+}
+
+.main-posts-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.main-posts-item {
+  list-style: none;
+}
