@@ -135,6 +135,10 @@ app.delete("/api/newsposts/:id", (req: Request, res: Response) => {
   }
 });
 
+app.get("/{*splat}", (req: Request, res: Response) => {
+  res.sendFile(path.join(clientPath, "index.html"));
+});
+
 app.listen(port, host, () => {
   console.log(`Example app listensing on sport ${host}:${port}`);
 });
