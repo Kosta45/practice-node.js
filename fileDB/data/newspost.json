@@ -1,26 +1,44 @@
 [
   {
-    "id": 1793230509291,
+    "id": "1793230509291",
     "title": "The Sun Is a Star",
     "text": "The Sun is the star at the center of our Solar System. It gives Earth light and heat. Without the Sun, life on Earth would not be possible.",
     "createDate": "2026-10-28T23:35:09.291Z"
   },
   {
-    "id": 1793230522592,
+    "id": "1793230522592",
     "title": "Water Covers Most of Earth",
     "text": "About 71% of Earth's surface is covered by water. Most of this water is found in oceans and seas. Only a small part is freshwater.",
     "createDate": "2026-10-28T23:35:22.592Z"
   },
   {
-    "id": 1793230537047,
+    "id": "1793230537047",
     "title": "Bees Help Plants Grow",
     "text": "Bees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.\nBees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.\nBees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.",
     "createDate": "2026-10-28T23:35:37.047Z"
   },
   {
-    "id": 1793230558223,
+    "id": "1793230558222",
     "title": "Trees Make Oxygen",
     "text": "Trees use sunlight, water, and carbon dioxide to make their food. This process is called photosynthesis. It also releases oxygen into the air. Trees use sunlight, water, and carbon dioxide to make their food. This process is called photosynthesis. It also releases oxygen into the air. Trees use sunlight, water, and carbon dioxide to make their food. This process is called photosynthesis. It also releases oxygen into the air. Trees use sunlight, water, and carbon dioxide to make their food. This process is called photosynthesis. It also releases oxygen into the air.",
-    "createDate": "2026-10-28T23:35:58.223Z"
+    "createDate": "2026-10-28T23:35:59.223Z"
+  },
+  {
+    "id": "1793548025242",
+    "title": "When were electric cars invented?",
+    "text": "Electric cars aren't as modern as we might think. According to Energy.Gov, inventors as early as 1828 were working on small electric cars!",
+    "createDate": "2026-11-01T15:47:05.242Z"
+  },
+  {
+    "id": "4ff9f392-d2e7-4444-b329-24ab60bb1472",
+    "title": "How We’d Spec It: 2027 BMW 3-Series",
+    "text": "The BMW 3-series is the poster child for sports sedans, so it’s always exciting when a new generation debuts. The gas-powered Neue Klasse 3-series that can be configured on BMW’s consumer site is available with a 255-hp turbocharged 2.0 four-cylinder (330) or a 437-hp turbocharged 3.0-liter straight-six (M350). In rear-wheel-drive form, the 330 starts at $51,250, while the all-wheel-drive-only M350 starts at $67,250. Regardless of powertrain, both Bimmers offer a wide selection of paint colors, wheel designs, and stand-alone options. That level of personalization makes the new 2027 BMW 3-series a perfect candidate for our How We’d Spec It series.",
+    "createDate": "2026-11-01T16:16:40.430Z"
+  },
+  {
+    "id": "e96254ca-cc1f-4606-b102-d85517709a17",
+    "title": "2027 Fiat Topolino Finally Earns Street-Legal Status in the States",
+    "text": "The Fiat Topolino has officially earned street-legal status in the United States through its low-speed vehicle designation.\nAs a low-speed vehicle (LSV), the Topolino can only operate on roads with posted speed limits of up to 35 mph.\nNow street legal, the Topolino is also gaining a handful of new exterior colors, including Corallo Orange and Luna Greige, as well as an Open-Air body style.\nSomeone send notice to The Villages: The Fiat Topolino has officially earned street-legal status in the United States. There’s one big caveat to that legality, though, which is that the tiny Topolino is designated as a low-speed vehicle (a.k.a. an LSV).",
+    "createDate": "2026-11-01T16:21:05.921Z"
   }
 ]
