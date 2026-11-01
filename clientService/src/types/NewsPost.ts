@@ -1,5 +1,5 @@
 export type NewsPost = {
-  id: number;
+  id: string;
   title: string;
   text: string;
   createDate: string;
