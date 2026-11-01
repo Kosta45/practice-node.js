@@ -8,7 +8,7 @@ export async function getAll() {
   return response.json();
 }
 
-export async function getById(newsId: number) {
+export async function getById(newsId: string) {
   const response = await fetch(`/api/newsposts/${newsId}`);
 
   if (!response.ok) {
@@ -34,7 +34,7 @@ export async function createNews(data: { title: string; text: string }) {
   return response.json();
 }
 
-export async function deleteNews(id: number) {
+export async function deleteNews(id: string) {
   const response = await fetch(`/api/newsposts/${id}`, {
     method: "DELETE",
   });
@@ -47,7 +47,7 @@ export async function deleteNews(id: number) {
 }
 
 export async function updateNews(
-  id: number,
+  id: string,
   data: { title: string; text: string },
 ) {
   const response = await fetch(`/api/newsposts/${id}`, {
