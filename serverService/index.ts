@@ -1,8 +1,8 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
-import fileDB from "../fileDB/fileDB.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import NewspostsService from "./NewspostsService.js";
 
 const app = express();
 app.use(express.json());
@@ -17,33 +17,35 @@ const clientPath = path.resolve(__dirname, "../clientService/dist");
 
 app.use(express.static(clientPath));
 
-const newsPostSchema = {
-  id: Number,
-  title: String,
-  text: String,
-  createDate: Date,
-};
-
-fileDB.registerSchema("newspost", newsPostSchema);
-const newsTablePosts = fileDB.getTable("newspost");
-
 app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(clientPath, "index.html"));
 });
 
 app.get("/api/newsposts/", (req: Request, res: Response) => {
   try {
-    res.json(newsTablePosts.getAll());
+    const page = Number(req.query.page ?? 0);
+    const size = Number(req.query.size ?? 10);
+
+    const posts = NewspostsService.getAll({ page, size });
+    return res.status(200).json(posts);
   } catch (err) {
     res.status(500).json({
       message: "Failed to get news posts.",
     });
   }
 });
+
 app.get("/api/newsposts/:id", (req: Request, res: Response) => {
   try {
-    const id = Number(req.params.id);
-    const post = newsTablePosts.getById(id);
+    const id = req.params.id;
+
+    if (typeof id !== "string") {
+      return res.status(400).json({
+        message: "Invalid ID",
+      });
+    }
+
+    const post = NewspostsService.getById(id);
 
     if (!post) {
       return res.status(404).json({
@@ -61,7 +63,7 @@ app.get("/api/newsposts/:id", (req: Request, res: Response) => {
 
 app.post("/api/newsposts/", (req: Request, res: Response) => {
   try {
-    const post = newsTablePosts.create(req.body);
+    const post = NewspostsService.create(req.body);
     res.status(201).json(post);
   } catch (err) {
     console.log(err);
@@ -73,8 +75,15 @@ app.post("/api/newsposts/", (req: Request, res: Response) => {
 
 app.put("/api/newsposts/:id", (req: Request, res: Response) => {
   try {
-    const id = Number(req.params.id);
-    const post = newsTablePosts.getById(id);
+    const id = req.params.id;
+
+    if (typeof id !== "string") {
+      return res.status(400).json({
+        message: "Invalid ID",
+      });
+    }
+
+    const post = NewspostsService.getById(id);
     const updates = req.body;
 
     if (!post || !updates) {
@@ -83,7 +92,7 @@ app.put("/api/newsposts/:id", (req: Request, res: Response) => {
       });
     }
 
-    const updatedPost = newsTablePosts.update(id, updates);
+    const updatedPost = NewspostsService.update(id, updates);
 
     if (!updatedPost) {
       return res.status(404).json({
@@ -101,8 +110,15 @@ app.put("/api/newsposts/:id", (req: Request, res: Response) => {
 
 app.delete("/api/newsposts/:id", (req: Request, res: Response) => {
   try {
-    const id = Number(req.params.id);
-    const post = newsTablePosts.getById(id);
+    const id = req.params.id;
+
+    if (typeof id !== "string") {
+      return res.status(400).json({
+        message: "Invalid ID",
+      });
+    }
+
+    const post = NewspostsService.getById(id);
 
     if (!post) {
       return res.status(404).json({
@@ -110,7 +126,7 @@ app.delete("/api/newsposts/:id", (req: Request, res: Response) => {
       });
     }
 
-    newsTablePosts.delete(id);
+    NewspostsService.delete(id);
     return res.status(200).json(post);
   } catch (err) {
     res.status(500).json({
