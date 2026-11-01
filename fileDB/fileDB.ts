@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "node:path";
+import { randomUUID } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import type {
   NewPost,
@@ -36,7 +37,7 @@ class NewsPostTable {
     }));
   }
 
-  getById(id: number): NewPost | undefined {
+  getById(id: string): NewPost | undefined {
     const data = this.getAll();
     return data.find((item) => item.id === id);
   }
@@ -49,7 +50,7 @@ class NewsPostTable {
     ) as CreateNewPost;
 
     const post: NewPost = {
-      id: Date.now(),
+      id: randomUUID(),
       ...filteredData,
       createDate: new Date(),
     };
@@ -61,7 +62,7 @@ class NewsPostTable {
     return post;
   }
 
-  update(id: number, updates: UpdateNewPost): NewPost | null {
+  update(id: string, updates: UpdateNewPost): NewPost | null {
     const data = this.getAll();
     const index = data.findIndex((item) => item.id === id);
 
@@ -80,7 +81,7 @@ class NewsPostTable {
     return data[index];
   }
 
-  delete(id: number): number | null {
+  delete(id: string): string | null {
     const data = this.getAll();
 
     const newData = data.filter((item) => item.id !== id);
