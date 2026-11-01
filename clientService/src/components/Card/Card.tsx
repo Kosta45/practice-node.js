@@ -4,7 +4,7 @@ import "./Card.css";
 
 type NewsCardProps = {
   post: NewsPost;
-  handleDelete: (id: number) => Promise<void>;
+  handleDelete: (id: string) => Promise<void>;
 };
 
 function Card({ post, handleDelete }: NewsCardProps) {
@@ -25,6 +25,13 @@ function Card({ post, handleDelete }: NewsCardProps) {
       </Link>
 
       <div className="card__actions">
+        <Link
+          to={`/news/${post.id}`}
+          className="card__button card__button--edit"
+        >
+          Edit
+        </Link>
+
         <button
           type="button"
           className="card__button card__button--delete"

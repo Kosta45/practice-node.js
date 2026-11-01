@@ -6,7 +6,7 @@ import "./Home.css";
 type HomeProps = {
   postsData: NewsPost[];
   handleCreate: (data: { title: string; text: string }) => Promise<void>;
-  handleDelete: (id: number) => Promise<void>;
+  handleDelete: (id: string) => Promise<void>;
 };
 
 function Home({ postsData, handleDelete }: HomeProps) {

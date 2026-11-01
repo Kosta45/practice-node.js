@@ -5,7 +5,7 @@ import type { NewsPost } from "../../types/NewsPost";
 import "./NewsPostPage.css";
 
 type NewsPostPageProps = {
-  handleDelete: (id: number) => Promise<void>;
+  handleDelete: (id: string) => Promise<void>;
 };
 
 function NewsPostPage({ handleDelete }: NewsPostPageProps) {
@@ -21,7 +21,7 @@ function NewsPostPage({ handleDelete }: NewsPostPageProps) {
   useEffect(() => {
     if (!id) return;
 
-    getById(Number(id))
+    getById(id)
       .then((data) => {
         setPost(data);
         setTitle(data.title);

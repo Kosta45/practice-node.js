@@ -19,7 +19,7 @@ function App() {
     setData((prevPosts) => [...prevPosts, newPost]);
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     await deleteNews(id);
 
     setData((prevPosts) => prevPosts.filter((post) => post.id !== id));
