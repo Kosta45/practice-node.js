@@ -1,4 +1,7 @@
 import NewspostsRepository from "./NewspostsRepository";
+import newspostValidator from "./validator/newspostValidator.js";
+import { ValidatorError } from "./errors/ValidatorError.js";
+import { NewspostsServiceError } from "./errors/NewspostsServiceError.js";
 
 import type {
   CreateNewPost,
@@ -12,23 +15,64 @@ type PaginationParams = {
 
 class NewspostsService {
   getAll(params: PaginationParams) {
-    return NewspostsRepository.getAll(params);
+    try {
+      return NewspostsRepository.getAll(params);
+    } catch (err) {
+      throw new NewspostsServiceError("Failed to get newsposts");
+    }
   }
 
   getById(id: string) {
-    return NewspostsRepository.getById(id);
+    try {
+      return NewspostsRepository.getById(id);
+    } catch (error) {
+      throw new NewspostsServiceError("Failed to get newspost by ID");
+    }
   }
 
   create(data: CreateNewPost) {
-    return NewspostsRepository.create(data);
+    try {
+      const isValid = newspostValidator.create(data);
+
+      if (!isValid) {
+        throw new ValidatorError("Invalid newspost data");
+      }
+
+      return NewspostsRepository.create(data);
+    } catch (err) {
+      if (err instanceof ValidatorError) {
+        throw err;
+      }
+
+      throw new NewspostsServiceError("Failed to create newspost");
+    }
   }
 
   update(id: string, data: UpdateNewPost) {
-    return NewspostsRepository.update(id, data);
+    try {
+      const isValid = newspostValidator.update(data);
+
+      if (!isValid) {
+        console.log(newspostValidator.update.errors);
+        throw new ValidatorError("Invalid newspost data");
+      }
+
+      return NewspostsRepository.update(id, data);
+    } catch (err) {
+      if (err instanceof ValidatorError) {
+        throw err;
+      }
+
+      throw new NewspostsServiceError("Failed to update newspost");
+    }
   }
 
   delete(id: string) {
-    return NewspostsRepository.delete(id);
+    try {
+      return NewspostsRepository.delete(id);
+    } catch (err) {
+      throw new NewspostsServiceError("Failed to delete newspost");
+    }
   }
 }
 

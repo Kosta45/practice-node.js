@@ -12,9 +12,11 @@ type PaginationParams = {
 };
 
 const newsPostSchema = {
-  id: Number,
+  id: String,
   title: String,
   text: String,
+  genre: String,
+  isPrivate: Boolean,
   createDate: Date,
 };
 

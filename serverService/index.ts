@@ -1,11 +1,24 @@
 import "dotenv/config";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
+import logger from "./logger.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import NewspostsService from "./NewspostsService.js";
+import errorHandler from "./errors/errorHandler.js";
+import { NewspostsServiceError } from "./errors/NewspostsServiceError.js";
 
 const app = express();
 app.use(express.json());
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  logger.info("Incoming request", {
+    method: req.method,
+    url: req.originalUrl,
+    body: req.body,
+  });
+
+  next();
+});
 
 const host = process.env.HOST;
 const port = Number(process.env.PORT);
@@ -21,124 +34,140 @@ app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(clientPath, "index.html"));
 });
 
-app.get("/api/newsposts/", (req: Request, res: Response) => {
-  try {
-    const page = Number(req.query.page ?? 0);
-    const size = Number(req.query.size ?? 10);
+app.get(
+  "/api/newsposts/error",
+  (req: Request, res: Response, next: NextFunction) => {
+    throw new NewspostsServiceError("Test service error");
+  },
+);
 
-    const posts = NewspostsService.getAll({ page, size });
-    return res.status(200).json(posts);
-  } catch (err) {
-    res.status(500).json({
-      message: "Failed to get news posts.",
-    });
-  }
-});
+app.get(
+  "/api/newsposts/",
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const page = Number(req.query.page ?? 0);
+      const size = Number(req.query.size ?? 10);
 
-app.get("/api/newsposts/:id", (req: Request, res: Response) => {
-  try {
-    const id = req.params.id;
-
-    if (typeof id !== "string") {
-      return res.status(400).json({
-        message: "Invalid ID",
-      });
+      const posts = NewspostsService.getAll({ page, size });
+      return res.status(200).json(posts);
+    } catch (err) {
+      next(err);
     }
+  },
+);
 
-    const post = NewspostsService.getById(id);
+app.get(
+  "/api/newsposts/:id",
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id;
 
-    if (!post) {
-      return res.status(404).json({
-        message: "News post not found.",
-      });
+      if (typeof id !== "string") {
+        return res.status(400).json({
+          message: "Invalid ID",
+        });
+      }
+
+      const post = NewspostsService.getById(id);
+
+      if (!post) {
+        return res.status(404).json({
+          message: "News post not found.",
+        });
+      }
+
+      return res.status(200).json(post);
+    } catch (err) {
+      next(err);
     }
+  },
+);
 
-    return res.status(200).json(post);
-  } catch (err) {
-    res.status(500).json({
-      message: "Failed to get post.",
-    });
-  }
-});
+app.post(
+  "/api/newsposts/",
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      console.log("Request body:", req.body);
 
-app.post("/api/newsposts/", (req: Request, res: Response) => {
-  try {
-    const post = NewspostsService.create(req.body);
-    res.status(201).json(post);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({
-      message: "Failed to create news post.",
-    });
-  }
-});
+      const post = NewspostsService.create(req.body);
 
-app.put("/api/newsposts/:id", (req: Request, res: Response) => {
-  try {
-    const id = req.params.id;
-
-    if (typeof id !== "string") {
-      return res.status(400).json({
-        message: "Invalid ID",
-      });
+      console.log("Post created:", post);
+      res.status(201).json(post);
+    } catch (err) {
+      next(err);
     }
+  },
+);
 
-    const post = NewspostsService.getById(id);
-    const updates = req.body;
+app.put(
+  "/api/newsposts/:id",
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id;
 
-    if (!post || !updates) {
-      return res.status(404).json({
-        message: "News post not found.",
-      });
+      if (typeof id !== "string") {
+        return res.status(400).json({
+          message: "Invalid ID",
+        });
+      }
+
+      const post = NewspostsService.getById(id);
+      const updates = req.body;
+
+      if (!post || !updates) {
+        return res.status(404).json({
+          message: "News post not found.",
+        });
+      }
+
+      const updatedPost = NewspostsService.update(id, updates);
+
+      if (!updatedPost) {
+        return res.status(404).json({
+          message: "News post not found.",
+        });
+      }
+
+      return res.status(200).json(updatedPost);
+    } catch (err) {
+      next(err);
     }
+  },
+);
 
-    const updatedPost = NewspostsService.update(id, updates);
+app.delete(
+  "/api/newsposts/:id",
+  (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id;
 
-    if (!updatedPost) {
-      return res.status(404).json({
-        message: "News post not found.",
-      });
+      if (typeof id !== "string") {
+        return res.status(400).json({
+          message: "Invalid ID",
+        });
+      }
+
+      const post = NewspostsService.getById(id);
+
+      if (!post) {
+        return res.status(404).json({
+          message: "News post not found.",
+        });
+      }
+
+      NewspostsService.delete(id);
+      return res.status(200).json(post);
+    } catch (err) {
+      next(err);
     }
-
-    return res.status(200).json(updatedPost);
-  } catch (err) {
-    res.status(500).json({
-      message: "Failed to update post.",
-    });
-  }
-});
-
-app.delete("/api/newsposts/:id", (req: Request, res: Response) => {
-  try {
-    const id = req.params.id;
-
-    if (typeof id !== "string") {
-      return res.status(400).json({
-        message: "Invalid ID",
-      });
-    }
-
-    const post = NewspostsService.getById(id);
-
-    if (!post) {
-      return res.status(404).json({
-        message: "News post not found.",
-      });
-    }
-
-    NewspostsService.delete(id);
-    return res.status(200).json(post);
-  } catch (err) {
-    res.status(500).json({
-      message: "Failed to delete post.",
-    });
-  }
-});
+  },
+);
 
 app.get("/{*splat}", (req: Request, res: Response) => {
   res.sendFile(path.join(clientPath, "index.html"));
 });
 
+app.use(errorHandler);
 app.listen(port, host, () => {
   console.log(`Example app listensing on sport ${host}:${port}`);
 });
