@@ -1,17 +1,5 @@
 [
   {
-    "id": "1793230509291",
-    "title": "The Sun Is a Star",
-    "text": "The Sun is the star at the center of our Solar System. It gives Earth light and heat. Without the Sun, life on Earth would not be possible.",
-    "createDate": "2026-10-28T23:35:09.291Z"
-  },
-  {
-    "id": "1793230522592",
-    "title": "Water Covers Most of Earth",
-    "text": "About 71% of Earth's surface is covered by water. Most of this water is found in oceans and seas. Only a small part is freshwater.",
-    "createDate": "2026-10-28T23:35:22.592Z"
-  },
-  {
     "id": "1793230537047",
     "title": "Bees Help Plants Grow",
     "text": "Bees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.\nBees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.\nBees visit flowers to collect nectar and pollen. When they move between flowers, they help plants reproduce. Many fruits and vegetables depend on pollination.",
@@ -34,5 +22,21 @@
     "title": "How We’d Spec It: 2027 BMW 3-Series",
     "text": "The BMW 3-series is the poster child for sports sedans, so it’s always exciting when a new generation debuts. The gas-powered Neue Klasse 3-series that can be configured on BMW’s consumer site is available with a 255-hp turbocharged 2.0 four-cylinder (330) or a 437-hp turbocharged 3.0-liter straight-six (M350). In rear-wheel-drive form, the 330 starts at $51,250, while the all-wheel-drive-only M350 starts at $67,250. Regardless of powertrain, both Bimmers offer a wide selection of paint colors, wheel designs, and stand-alone options. That level of personalization makes the new 2027 BMW 3-series a perfect candidate for our How We’d Spec It series.",
     "createDate": "2026-11-01T16:16:40.430Z"
+  },
+  {
+    "title": "Crazy frog!",
+    "text": "An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React S",
+    "genre": "Sport",
+    "isPrivate": false,
+    "createDate": "2026-11-12T12:39:23.882Z",
+    "id": "89382cdd-feff-4dbd-a1ca-852e433c8be9"
+  },
+  {
+    "title": "Test-New",
+    "text": "New",
+    "genre": "Sport",
+    "isPrivate": false,
+    "createDate": "2026-11-14T12:02:54.350Z",
+    "id": "3664b072-ffd5-4f3f-b75e-a4e5c39afa20"
   }
 ]

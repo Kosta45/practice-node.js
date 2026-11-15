@@ -59,3 +59,117 @@
 {"level":"info","message":"Incoming request","method":"DELETE","timestamp":"2026-11-08T16:18:39.690Z","url":"/api/newsposts/315ba1e6-bccd-4a58-816d-f59369ff5b5e"}
 {"level":"info","message":"Incoming request","method":"DELETE","timestamp":"2026-11-08T16:18:41.074Z","url":"/api/newsposts/6565614e-11bd-4a05-beb6-bfcc44cb28a3"}
 {"level":"info","message":"Incoming request","method":"DELETE","timestamp":"2026-11-08T16:18:42.482Z","url":"/api/newsposts/293f6191-da4e-490d-8c6f-74fa5d351973"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T16:19:26.132Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T16:19:26.153Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T16:19:26.154Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T16:19:26.173Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T16:19:26.187Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T21:22:24.333Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T21:22:24.343Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T21:22:24.345Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-08T21:22:24.389Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:23:52.830Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:23:52.862Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:23:52.863Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:23:52.969Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:23:53.075Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:24:48.578Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:25:04.183Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:25:04.218Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:25:04.221Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:25:04.278Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:25:04.415Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"DELETE","timestamp":"2026-11-12T12:25:18.284Z","url":"/api/newsposts/1793230509291"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:31:52.282Z","url":"/api/newsposts"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React Server Components admin dashboard that fetches nothing from the browser: no query cache, no fetch hooks, no chart library. The title says ‘no client data layer’, not ‘zero JavaScript’. The admin tree has five Server Component pages. Mutations and a few interactive controls are small client components. What is missing is the layer that usually comes with a dashboard: a client-side cache, API routes that only exist to feed it, and loading states for every panel.","title":"Test New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:32:02.282Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-12T12:32:02.284Z"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React Server Components admin dashboard that fetches nothing from the browser: no query cache, no fetch hooks, no chart lib","title":"Test New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:32:17.903Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-12T12:32:17.904Z"}
+{"body":{"title":"Crazy frog!"},"level":"info","message":"Incoming request","method":"PUT","timestamp":"2026-11-12T12:33:45.069Z","url":"/api/newsposts/1792955649710"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:18.741Z","url":"/api/newsposts/error"}
+{"level":"error","message":"Test service error","stack":"NewspostsServiceError: Test service error\n    at <anonymous> (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\index.ts:44:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:295:15\n    at processParams (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:582:12)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:291:5)\n    at SendStream.error (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\serve-static\\index.js:120:7)","timestamp":"2026-11-12T12:34:18.744Z"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:29.938Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:29.965Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:29.968Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:29.994Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:30.082Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:34:41.817Z","url":"/api/newsposts/1793230537047"}
+{"level":"info","message":"Incoming request","method":"DELETE","timestamp":"2026-11-12T12:34:56.333Z","url":"/api/newsposts/1793230522592"}
+{"body":{"text":"fefefefefe","title":"efef"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:35:12.355Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-12T12:35:12.356Z"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React Server Components admin dashboard that fetches nothing from the browser: no query cache, no fetch hooks, no chart lib","title":"Test-New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:35:42.606Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-12T12:35:42.610Z"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React Server Components admin dashboard that fetches nothing from the browser: no query cache, no fetch hooks, no chart lib","title":"Test-New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:37:53.836Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-12T12:37:53.838Z"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"An internal admin tool is the easiest place to stop building a client data layer. One viewer, no SEO, no public traffic, and a question that is always ‘what is the state right now’. For the admin of my PDF-verification SaaS I built a React S","title":"Test-New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-12T12:39:23.881Z","url":"/api/newsposts/"}
+{"body":{"title":"Crazy frog!"},"level":"info","message":"Incoming request","method":"PUT","timestamp":"2026-11-12T12:39:51.667Z","url":"/api/newsposts/89382cdd-feff-4dbd-a1ca-852e433c8be9"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:40:06.725Z","url":"/api/newsposts/error"}
+{"level":"error","message":"Test service error","stack":"NewspostsServiceError: Test service error\n    at <anonymous> (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\index.ts:44:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:295:15\n    at processParams (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:582:12)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:291:5)\n    at SendStream.error (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\serve-static\\index.js:120:7)","timestamp":"2026-11-12T12:40:06.728Z"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-12T12:40:24.801Z","url":"/api/newsposts/error/"}
+{"level":"error","message":"Test service error","stack":"NewspostsServiceError: Test service error\n    at <anonymous> (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\index.ts:44:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:435:11)\n    at Layer.handleRequest (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\lib\\layer.js:152:17)\n    at D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:295:15\n    at processParams (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:582:12)\n    at next (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\router\\index.js:291:5)\n    at SendStream.error (D:\\IT-learning\\DanIT\\node.js\\homeworks\\homework-2\\serverService\\node_modules\\serve-static\\index.js:120:7)","timestamp":"2026-11-12T12:40:24.802Z"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T11:55:58.864Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T11:55:58.934Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T11:55:58.941Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T11:55:59.036Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T11:55:59.228Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:01:21.834Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:01:21.859Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:01:21.861Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:01:21.885Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:01:21.974Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:31.993Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:32.019Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:32.021Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:32.061Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:32.179Z","url":"/favicon.svg"}
+{"body":{"text":"test text","title":"Test"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-14T12:02:39.899Z","url":"/api/newsposts/"}
+{"level":"warn","message":"Invalid newspost data","timestamp":"2026-11-14T12:02:39.901Z"}
+{"body":{"genre":"Sport","isPrivate":false,"text":"New","title":"Test-New"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-14T12:02:54.348Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:59.491Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:59.510Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:59.511Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:59.521Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:02:59.548Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:02.698Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:02.715Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:02.715Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:02.728Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:02.767Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:03.345Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:03.362Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:03.364Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:03.371Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:03:03.401Z","url":"/favicon.svg"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:14:34.032Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:14:34.056Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:14:34.057Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:14:34.081Z","url":"/api/newsposts/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-14T12:14:34.159Z","url":"/favicon.svg"}
+{"body":{"confirmPassword":"12345678","email":"test@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-14T12:54:27.462Z","url":"/auth/register"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T01:20:27.118Z","url":"/"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T01:20:27.149Z","url":"/assets/index-CqEzNU49.js"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T01:20:27.151Z","url":"/assets/index-CFlCGd_v.css"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T01:20:27.192Z","url":"/api/newsposts/"}
+{"body":{"confirmPassword":"12345678","email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:15:11.098Z","url":"/auth/register"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:16:37.003Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:17:17.543Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:17:18.659Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:21:04.950Z","url":"/auth/login"}
+{"body":{"confirmPassword":"12345678","email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:21:23.259Z","url":"/auth/register"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:21:37.238Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:21:38.761Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:21:44.754Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:22:58.308Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:23:54.075Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:23:56.918Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:24:33.019Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:27:40.035Z","url":"/auth/login"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:35:48.260Z","url":"/auth/login"}
+{"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:48:58.253Z","url":"/user"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:49:05.783Z","url":"/user"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T18:49:10.136Z","url":"/auth/login"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:49:13.173Z","url":"/user"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T18:50:09.284Z","url":"/user"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T19:03:57.766Z","url":"/user"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T19:07:38.693Z","url":"/user"}
+{"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T19:07:42.021Z","url":"/auth/login"}
