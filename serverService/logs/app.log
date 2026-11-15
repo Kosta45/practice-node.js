@@ -173,3 +173,6 @@
 {"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T19:03:57.766Z","url":"/user"}
 {"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T19:07:38.693Z","url":"/user"}
 {"body":{"email":"jack@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T19:07:42.021Z","url":"/auth/login"}
+{"body":{"confirmPassword":"12345678","email":"petro@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T19:08:35.797Z","url":"/auth/register"}
+{"body":{"email":"petro@gmail.com","password":"12345678"},"level":"info","message":"Incoming request","method":"POST","timestamp":"2026-11-15T19:08:58.606Z","url":"/auth/login"}
+{"level":"info","message":"Incoming request","method":"GET","timestamp":"2026-11-15T19:09:39.269Z","url":"/user"}
