@@ -1,16 +1,16 @@
-import fs from "fs";
+import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import { fileURLToPath } from "node:url";
-import type {
-  NewPost,
-  CreateNewPost,
-  UpdateNewPost,
-} from "./interfaces/NewPost.js";
+
+interface BaseEntity {
+  id: string;
+}
 
 type Schema = Record<string, unknown>;
 
 const schemas: Record<string, Schema> = {};
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -18,7 +18,7 @@ function registerSchema(name: string, schema: Schema): void {
   schemas[name] = schema;
 }
 
-class NewsPostTable {
+class FileTable<T extends BaseEntity> {
   private file: string;
   private schema: Schema;
 
@@ -27,66 +27,91 @@ class NewsPostTable {
     this.schema = schema;
   }
 
-  getAll(): NewPost[] {
+  getAll(): T[] {
     const data = fs.readFileSync(this.file, "utf-8");
-    const posts = JSON.parse(data) as NewPost[];
+    const records = JSON.parse(data) as Record<string, unknown>[];
 
-    return posts.map((post) => ({
-      ...post,
-      createDate: new Date(String(post.createDate)),
-    }));
+    return records.map((record) => {
+      const entity = { ...record };
+
+      for (const [key, fieldType] of Object.entries(this.schema)) {
+        if (fieldType === Date && entity[key] !== undefined) {
+          entity[key] = new Date(String(entity[key]));
+        }
+      }
+
+      return entity as T;
+    });
   }
 
-  getById(id: string): NewPost | undefined {
+  getById(id: string): T | undefined {
     const data = this.getAll();
+
     return data.find((item) => item.id === id);
   }
 
-  create(dataPost: CreateNewPost): NewPost {
-    const data = this.getAll();
+  create(data: Partial<Omit<T, "id">>): T {
+    const records = this.getAll();
 
     const filteredData = Object.fromEntries(
-      Object.entries(dataPost).filter(([key]) => key in this.schema),
-    ) as CreateNewPost;
+      Object.entries(data).filter(
+        ([key]) => key in this.schema && key !== "id",
+      ),
+    );
 
-    const post: NewPost = {
-      id: randomUUID(),
+    for (const [key, fieldType] of Object.entries(this.schema)) {
+      if (fieldType === Date && filteredData[key] === undefined) {
+        filteredData[key] = new Date();
+      }
+    }
+
+    const entity = {
       ...filteredData,
-      createDate: new Date(),
-    };
+      id: randomUUID(),
+    } as T;
 
-    data.push(post);
+    records.push(entity);
 
-    fs.writeFileSync(this.file, JSON.stringify(data, null, 2));
+    fs.writeFileSync(this.file, JSON.stringify(records, null, 2));
 
-    return post;
+    return entity;
   }
 
-  update(id: string, updates: UpdateNewPost): NewPost | null {
-    const data = this.getAll();
-    const index = data.findIndex((item) => item.id === id);
+  update(id: string, updates: Partial<Omit<T, "id">>): T | null {
+    const records = this.getAll();
+
+    const index = records.findIndex((item) => item.id === id);
 
     if (index === -1) return null;
 
-    const post = data[index];
-    if (!post) return null;
+    const current = records[index];
 
-    data[index] = {
-      ...post,
-      ...updates,
+    if (!current) return null;
+
+    const filteredUpdates = Object.fromEntries(
+      Object.entries(updates).filter(
+        ([key]) => key in this.schema && key !== "id",
+      ),
+    );
+
+    const updatedEntity = {
+      ...current,
+      ...filteredUpdates,
     };
 
-    fs.writeFileSync(this.file, JSON.stringify(data, null, 2));
+    records[index] = updatedEntity as T;
 
-    return data[index];
+    fs.writeFileSync(this.file, JSON.stringify(records, null, 2));
+
+    return records[index] ?? null;
   }
 
   delete(id: string): string | null {
-    const data = this.getAll();
+    const records = this.getAll();
 
-    const newData = data.filter((item) => item.id !== id);
+    const newData = records.filter((item) => item.id !== id);
 
-    if (newData.length === data.length) return null;
+    if (newData.length === records.length) return null;
 
     fs.writeFileSync(this.file, JSON.stringify(newData, null, 2));
 
@@ -94,8 +119,8 @@ class NewsPostTable {
   }
 }
 
-function getTable(name: string): NewsPostTable {
-  return new NewsPostTable(name, schemas[name] ?? {});
+function getTable<T extends BaseEntity>(name: string): FileTable<T> {
+  return new FileTable<T>(name, schemas[name] ?? {});
 }
 
 export default {
