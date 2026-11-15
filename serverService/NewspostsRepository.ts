@@ -22,7 +22,7 @@ const newsPostSchema = {
 
 fileDB.registerSchema("newspost", newsPostSchema);
 
-const newsTablePosts = fileDB.getTable("newspost");
+const newsTablePosts = fileDB.getTable<NewPost>("newspost");
 
 class NewspostsRepository {
   getAll(params: PaginationParams): NewPost[] {
