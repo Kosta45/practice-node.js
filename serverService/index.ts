@@ -1,14 +1,27 @@
 import "dotenv/config";
-import express, { NextFunction, Request, Response } from "express";
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from "express";
 import logger from "./logger.js";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import NewspostsService from "./NewspostsService.js";
 import errorHandler from "./errors/errorHandler.js";
 import { NewspostsServiceError } from "./errors/NewspostsServiceError.js";
+import AuthController from "./auth/AuthController.js";
+import passport from "passport";
+import localStrategy from "./auth/strategies/LocalStrategy.js";
+import jwtStrategy from "./auth/strategies/JwtStretegy.js";
+import UserController from "./controllers/UserController.js";
 
 const app = express();
 app.use(express.json());
+passport.use("local", localStrategy);
+passport.use("jwt", jwtStrategy);
+
+app.use(passport.initialize());
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   logger.info("Incoming request", {
@@ -161,6 +174,14 @@ app.delete(
       next(err);
     }
   },
+);
+
+app.post("/auth/register", AuthController.register);
+app.post("/auth/login", AuthController.login);
+app.get(
+  "/user",
+  passport.authenticate("jwt", { session: false }),
+  UserController.getUser,
 );
 
 app.get("/{*splat}", (req: Request, res: Response) => {
