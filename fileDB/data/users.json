@@ -13,5 +13,15 @@
     "email": "petro@gmail.com",
     "password": "$2b$10$aX6DY040lWCpVNZLPfZGCO4OcCXHPkAPfD9Ex34.MYAMIavVDH9BK",
     "id": "627afae3-d775-4978-b470-09949565f0cd"
+  },
+  {
+    "email": "taras@gmail.com",
+    "password": "$2b$10$narB.ei8RFCtx3MTYWYoWun5itmvBFbyZHozsLXm3aoubGfvX2bpK",
+    "id": "97585d5a-690c-49cd-b567-f9e2dc782756"
+  },
+  {
+    "email": "tarass@gmail.com",
+    "password": "$2b$10$WxBiJpOJsDuHNLNmBvmE6Oe.544yq4yRwu/vWjcF3S3jErHwX9Eqm",
+    "id": "6422e906-6b4a-4fce-acd3-82d14329c294"
   }
 ]
