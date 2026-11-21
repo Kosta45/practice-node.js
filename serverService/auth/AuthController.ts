@@ -27,7 +27,7 @@ class AuthController {
 
       const result = await this.authService.login({ email, password });
 
-      res.status(201).json(result);
+      res.status(200).json(result);
     } catch (err: unknown) {
       if (err instanceof Error) res.status(400).json({ error: err.message });
       else res.status(500).json({ error: "internal_server_error" });
