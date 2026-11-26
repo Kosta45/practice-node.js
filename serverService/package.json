@@ -6,12 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --exec tsx  index.ts",
-    "createTable": "tsx db/scripts/createTable.ts",
-    "getAll": "tsx db/scripts/getAll.ts",
-    "getById": "tsx db/scripts/getById.ts",
-    "insert": "tsx db/scripts/insert.ts",
-    "update": "tsx db/scripts/update.ts",
-    "delete": "tsx db/scripts/delete.ts"
+    "createNewsPostTable": "tsx db/scripts/createNewsPostTable/createTable.ts",
+    "createVideoTable": "tsx db/scripts/createVideoTable/createTable.ts",
+    "getAllNewsPost": "tsx db/scripts/createNewsPostTable/getAll.ts",
+    "getByIdNewsPost": "tsx db/scripts/createNewsPostTable/getById.ts",
+    "insertNewsPost": "tsx db/scripts/createNewsPostTable/insert.ts",
+    "updateNewsPost": "tsx db/scripts/createNewsPostTable/update.ts",
+    "deleteNewsPost": "tsx db/scripts/createNewsPostTable/delete.ts",
+    "insertVideo": "tsx db/scripts/createVideoTable/insert.ts",
+    "findVideo": "tsx db/scripts/createVideoTable/find.ts",
+    "groupVideo": "tsx db/scripts/createVideoTable/group.ts",
+    "paginateVideo": "tsx db/scripts/createVideoTable/paginate.ts"
   },
   "keywords": [],
   "author": "",
